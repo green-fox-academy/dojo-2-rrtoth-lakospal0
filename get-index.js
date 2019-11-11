@@ -3,6 +3,21 @@
 let test = require('tape');
 
 const getIndex = (list, value) => {
+    let counter = 0;
+    let index = [];
+
+    list.forEach(e => { e == value ? counter++ : null })
+
+    if (counter > 1) {
+        for (let i = 0; i < list.length; i++) {
+            if (list[i] == value) {
+                index.push(i)
+            }
+        }
+
+        return index;
+    }
+
     if (!Number.isInteger(value)) {
         return "error";
     } else {
@@ -53,8 +68,8 @@ let listToTest2 = [1, 1, 2, 3, 4, 5, 5]
 let valueToTest4 = 5;
 
 test('test #2', t => {
-    let actual = getIndex(listToTest2, valueToTest4);
-    let expected = [5, 6];
+    let actual = JSON.stringify(getIndex(listToTest2, valueToTest4));
+    let expected = JSON.stringify([5, 6]);
 
     t.equal(actual, expected);
     t.end();

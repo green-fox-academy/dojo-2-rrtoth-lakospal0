@@ -46,3 +46,16 @@ test('test #2', t => {
     t.equal(actual, expected);
     t.end();
 })
+
+//test #4
+
+let listToTest2 = [1, 1, 2, 3, 4, 5, 5]
+let valueToTest4 = 5;
+
+test('test #2', t => {
+    let actual = getIndex(listToTest2, valueToTest4);
+    let expected = [5, 6];
+
+    t.equal(actual, expected);
+    t.end();
+})

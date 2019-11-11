@@ -1,9 +1,17 @@
 'use strict';
 
-import * as test from 'tape';
+let test = require('tape');
 
-const anagram = () => {
-
+const anagram = (a, b) => {
+    let first = a.split('');
+    let asd = first.sort();
+    let second = b.split('');
+    let das = second.sort();
+    if (asd == das) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 

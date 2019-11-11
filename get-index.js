@@ -3,7 +3,11 @@
 let test = require('tape');
 
 const getIndex = (list, value) => {
-    return list.indexOf(value)
+    if (!Number.isInteger(value)) {
+        return "error";
+    } else {
+        return list.indexOf(value)
+    }
 }
 
 //test #1
@@ -36,7 +40,7 @@ test('test #2', t => {
 let valueToTest3 = "a";
 
 test('test #2', t => {
-    let actual = getIndex(listToTest, valueToTest2);
+    let actual = getIndex(listToTest, valueToTest3);
     let expected = "error";
 
     t.equal(actual, expected);

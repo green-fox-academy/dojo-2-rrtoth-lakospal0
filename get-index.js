@@ -6,7 +6,7 @@ const getIndex = (list, value) => {
     if (!Number.isInteger(value)) {
         return "error";
     } else {
-        return list.indexOf(value)
+        return list.indexOf(value);
     }
 }
 

@@ -3,10 +3,15 @@
 let test = require('tape');
 
 const anagram = (a, b) => {
-    let first = a.split('').sort().join('');
     let second = b.split('').sort().join('');
-    
-    if (first == second) {
+    second.replace(" ", "");
+    let first = a.split('').sort().join('');
+    first.replace(" ", "");
+
+    console.log(first);
+    console.log(second);
+
+    if (JSON.stringify(first) == JSON.stringify(second)) {
         return true;
     } else {
         return false;
